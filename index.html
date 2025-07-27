@@ -35,6 +35,16 @@
       align-items: center;
       justify-content: center;
     }
+    #icq-status {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1; /* reduce spacing between lines */
+}
+
+.status-id {
+  font-size: x-small;
+  margin-top: 2px; /* tiny gap between "Offline" and the number */
+}
   </style>
 </head>
 <body>
@@ -57,9 +67,10 @@
         </g>
       </svg>
     </div>
-    <div id="icq-status" class="icq-status">
-      Offline
-    </div>
+<div id="icq-status" class="icq-status">
+  <div>Offline</div>
+  <div class="status-id">10727632</div>
+</div>
   </div>
 </body>
 </html>
