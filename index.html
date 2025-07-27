@@ -6,17 +6,17 @@
   <title>Justin Barnard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Roboto+Condensed&display=swap" rel="stylesheet" />
   <style>
+    h1 {
+      font-family: "Roboto Condensed", sans-serif;
+    }
+
     .icq-status {
       font-family: "Bitcount Prop Single", system-ui;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
-      font-size: large;
       font-variation-settings:
         "slnt" 0,
         "CRSV" 0.5,
@@ -27,7 +27,7 @@
     #icq {
       display: flex;
       align-items: center;
-      gap: 6px; /* optional: space between icon and status */
+      gap: 10px;
     }
 
     #icq-icon {
@@ -35,18 +35,20 @@
       align-items: center;
       justify-content: center;
     }
-    #icq-status {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1; /* reduce spacing between lines */
-}
 
-.status-id {
-  font-size: x-small;
-  margin-top: 2px; /* tiny gap between "Offline" and the number */
-}
+    #icq-status {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .status-id {
+      font-size: x-small;
+      margin-top: 2px;
+    }
   </style>
 </head>
+
 <body>
   <h1>Justin Barnard</h1>
   <div id="icq">
