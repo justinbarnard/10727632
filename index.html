@@ -13,85 +13,28 @@
     rel="stylesheet"
   />
 
-  <style>
-    body {
-      margin: 20px;
-      font-size: 16px;
-    }
-
-    h1 {
-      font-family: "Roboto Condensed", sans-serif;
-    }
-
-    #icq {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      width: fit-content;
-
-      background-color: #c0c0c0; /* classic gray */
-      border: 2px solid #fff; /* light outer border */
-      border-right-color: #808080; /* dark on right */
-      border-bottom-color: #808080; /* dark on bottom */
-      border-left-color: #fff;
-      border-top-color: #fff;
-
-      padding: 4px 8px;
-      border-radius: 3px;
-      box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
-    }
-
-    #icq-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #icq-status {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .icq-status {
-      font-family: "Bitcount Prop Single", system-ui;
-      font-optical-sizing: auto;
-      font-weight: 400;
-      font-style: normal;
-      font-variation-settings:
-        "slnt" 0,
-        "CRSV" 0.5,
-        "ELSH" 0,
-        "ELXP" 0;
-    }
-
-    .status-id {
-      font-size: xx-small;
-      margin-top: -3px;
-    }
-  </style>
+<link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
   <h1>Justin Barnard</h1>
-
+  <div id="social-bar">
+    <a href="https://bsky.app/profile/10727632.bsky.social" target="_blank" rel="noopener">
+      <img src="svg/bluesky.svg" alt="Bluesky" height="18px" width="18px" />
+    </a>
+    <span class="pipe">|</span>
+    <a href="https://github.com/justinbarnard" target="_blank" rel="noopener">
+      <img src="svg/github.svg" alt="GitHub" height="18px" width="18px">
+    </a>
+    <span class="pipe">|</span>
+    <a href="https://www.linkedin.com/in/justinabarnard" target="_blank" rel="noopener" >
+      <img src="svg/linkedin.svg" alt="LinkedIn"  height="18px" width="18px"/>
+    </a>
+  </div>
+<div></div>
   <div id="icq">
     <div id="icq-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" version="1.1" viewBox="0 0 210 210" xml:space="preserve">
-        <g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="13.229">
-          <g fill="#f5091f">
-            <path d="m106.61 110.23s-42.218-47.933-48.752-62.93c-6.534-14.998-4.4796-30.925 7.3807-35.35 11.86-4.4252 29.058 10.284 32.436 29.134 3.3782 18.85 8.9346 69.146 8.9346 69.146z"/>
-            <path d="m104.24 108.08s-3.4772-58.275 0-77.208c3.4772-18.933 21.955-27.771 36.631-23.482 14.676 4.2897 26.361 23.591 15.968 42.267-10.394 18.676-52.599 58.422-52.599 58.422z"/>
-            <path d="m104.14 106.37s40.123-44.003 58.085-48.769c17.962-4.7668 29.582-2.6383 34.339 9.6808 4.7576 12.319-7.0663 24.257-24.476 31.234-17.41 6.977-67.948 7.8542-67.948 7.8542z"/>
-            <path d="m103.95 105.45s64.011-10.41 80.734-0.91329c16.724 9.4971 17.563 19.84 16.256 31.234s-7.5384 23.693-28.129 23.197-68.862-53.518-68.862-53.518z"/>
-            <path d="m103.38 103.59s33.695 33.474 41.812 47.95c8.1173 14.476 5.3388 30.4-1.7262 35.866s-18.627 2.975-30.496-11.508c-11.869-14.483-9.59-72.308-9.59-72.308z"/>
-            <path d="m104.47 106.23s9.8769 64.267 0.54797 79.273c-9.329 15.006-22.579 21.054-35.001 17.249s-20.905-12.366-19.065-32.592c1.8397-20.226 53.518-63.93 53.518-63.93z"/>
-          </g>
-          <path d="m103.44 107.4s-35.939 37.331-51.327 40.732c-15.388 3.4011-23.473 2.9458-28.129-4.9317s-5.067-16.321 7.6716-27.216 71.784-8.5849 71.784-8.5849z" fill="#f5091f"/>
-          <path d="m102.01 107.02s-49.266 2.8098-69.592 0-24.215-11.647-23.745-23.745c0.46999-12.098 15.745-27.854 33.426-27.033s59.911 50.779 59.911 50.779z" fill="#f5091f"/>
-          <circle cx="103.56" cy="104.51" r="22.852" fill="#f8ee3e"/>
-        </g>
-      </svg>
+      <img src="svg/icq.svg" height="24px" width="24px">
     </div>
 
     <div id="icq-status" class="icq-status">
