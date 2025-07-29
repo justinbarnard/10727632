@@ -1,6 +1,20 @@
+@layer doodle, main;
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import "styles/doodle/doodle.css" layer(doodle);
+
+@layer main {
+:root {
+  --primary-black: #0C0908;
+}
 body {
+    background-color: white;
+  background-image: radial-gradient(#888 0.5px, transparent 0.5px);
+  background-size: 22px 22px; /* space between dots */
     margin: 20px;
-    font-size: 16px;
+    font-size: 16pt;
+    font-family: 'Short Stack', cursive;
   }
 
   #header-row {
@@ -11,7 +25,9 @@ body {
   }
 
   #header-text {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 300;
+    color: var(--primary-black)
   }
 
   #icq {
@@ -66,7 +82,7 @@ body {
     align-items: center;
     gap: 8px;
     margin-left: 2rem;
-    margin-bottom:3rem;
+    margin-bottom:0rem;
     font-family: monospace;
     font-size: 14px;
   }
@@ -81,4 +97,25 @@ body {
     color: #666;
     user-select: none;
   }
-  
+
+  hr {
+    border-bottom-width: 4px;
+    margin-top: 3px;
+
+  }
+  .card {
+    font-size: 12pt;
+    width: 300px;
+    height: 400px;
+  }
+
+  .borders-thin {
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+  }
+
+}
+
+
