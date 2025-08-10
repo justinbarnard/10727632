@@ -15,16 +15,17 @@
 <header>
   <div id="header-row">
     <h1 id="header-text">Justin Barnard</h1>
-    <div id="icq">
-      <div id="icq-icon">
-        <img src="svg/icq.svg" height="24px" width="24px">
-      </div>
-  
-      <div id="icq-status" class="icq-status">
-        <div>Offline</div>
-        <div class="status-id">10727632</div>
-      </div>
-    </div>
+
+<!-- Replace your existing #icq div with this -->
+<a href="https://www.icq.com" target="_blank" rel="noopener" id="icq">
+  <div id="icq-icon">
+    <img src="svg/icq.svg" height="24px" width="24px">
+  </div>
+  <div id="icq-status" class="icq-status">
+    <p>Offline</p>
+    <p class="status-id">10727632</p>
+  </div>
+</a>
   </div>
   <div id="social-bar">
     <a href="https://bsky.app/profile/10727632.bsky.social" target="_blank" rel="noopener">
@@ -42,8 +43,39 @@
 </header>
 <section class="doodle" id="_main">
   <hr>
-<div class="card borders-thin">
-Character Stats:
+<!-- Clean HTML - DoodleCSS will handle stat-box styling -->
+<div class="card borders-thin doodle">
+  <p class="stat-title">*Character Stats*</p>
+<ul class="stat-list">
+  <li class="stat-item">
+    <div class="stat-box">10</div>
+    <span class="stat-name">Grit</span>
+  </li>
+  <li class="stat-item">
+    <div class="stat-box">12</div>
+    <span class="stat-name">Adaptability</span>
+  </li>
+  <li class="stat-item">
+    <div class="stat-box">16</div>
+    <span class="stat-name">Communication</span>
+  </li>
+  <li class="stat-item">
+    <div class="stat-box">10</div>
+    <span class="stat-name">Impulsiveness</span>
+  </li>
+  <li class="stat-item">
+    <div class="stat-box">13</div>
+    <span class="stat-name">Stubbornness</span>
+  </li>
+  <li class="stat-item">
+    <div class="stat-box">11</div>
+    <span class="stat-name">Anxiety</span>
+  </li>
+  <li class="stat-item">
+    <div class="stat-box">13</div>
+    <span class="stat-name">Introversion</span>
+  </li>
+</ul>
 </div>
 </section>
 <footer>
