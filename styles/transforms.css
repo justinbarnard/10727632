@@ -1,72 +1,224 @@
 @layer stat-transforms;
+@layer saving-throws-tranforms;
 
 @layer stat-transforms {
 
-/* transforms.css */
+  /* transforms.css */
 
-/* =============================================================================
+  /* =============================================================================
    HAND-DRAWN TRANSFORMATIONS
    ============================================================================= */
 
-/* Transform just the number text inside each stat box */
-.stat-item:nth-child(1) .stat-box span {
-  transform: rotate(-12deg) translate(1px, -2px);
-  display: inline-block;
-  font-weight: 100;
+  /* Transform just the number text inside each stat box */
+  .stat-item:nth-child(1) .stat-box span {
+    transform: rotate(-12deg) translate(1px, -2px);
+    display: inline-block;
+    font-weight: 100;
+  }
+
+  .stat-item:nth-child(2) .stat-box span {
+    transform: rotate(8deg) translate(3px, 1px);
+    display: inline-block;
+  }
+
+  .stat-item:nth-child(2) .stat-box span::before {
+    content: "9";
+    /* The "erased" number */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(60, 60, 60, 0.2);
+    /* Very faded */
+    transform: rotate(-9deg) translate(4px, -3px);
+    /* Slightly different position/rotation */
+    z-index: -1;
+    font-weight: 100;
+  }
+
+  .stat-item:nth-child(3) .stat-box span {
+    transform: rotate(-6deg) translate(2px, 0px);
+    display: inline-block;
+    font-weight: 100;
+  }
+
+  .stat-item:nth-child(4) .stat-box span {
+    transform: rotate(14deg) translate(0px, -px);
+    display: inline-block;
+    font-weight: 900;
+  }
+
+  .stat-item:nth-child(5) .stat-box span {
+    transform: rotate(-9deg) translate(-1px, 0px);
+    display: inline-block;
+    font-weight: 200;
+  }
+
+  .stat-item:nth-child(5) .stat-box span::before {
+    content: "15";
+    /* The "erased" number */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(60, 60, 60, 0.2);
+    /* Very faded */
+    transform: rotate(-6deg) translate(3px, 1px);
+    /* Slightly different position/rotation */
+    z-index: -1;
+    font-weight: 100;
+  }
+
+  .stat-item:nth-child(6) .stat-box span {
+    transform: rotate(13deg) translate(2px, -3px);
+    display: inline-block;
+    font-weight: 900;
+  }
+
+  .stat-item:nth-child(7) .stat-box span {
+    transform: rotate(-7deg) translate(0px, 1px);
+    display: inline-block;
+  }
 }
 
-.stat-item:nth-child(2) .stat-box span {
-  transform: rotate(8deg) translate(3px, 1px);
-  display: inline-block;
-}
-.stat-item:nth-child(2) .stat-box span::before {
-  content: "9"; /* The "erased" number */
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: rgba(60, 60, 60, 0.2); /* Very faded */
-  transform: rotate(-9deg) translate(4px, -3px); /* Slightly different position/rotation */
-  z-index: -1;
-  font-weight: 100;
-}
+@layer saving-throws-transforms {
 
-.stat-item:nth-child(3) .stat-box span {
-  transform: rotate(-6deg) translate(2px, 0px);
-  display: inline-block;
-  font-weight: 100;
-}
+  .saving-throw-item:nth-child(1) {
+    --box-rotation: 90deg;
+    --content-rotation: 9deg;
+    --translate-x: -1px;
+    --translate-y: 0px;
+    --font-weight: normal;
+    --border-top: 7px;
+    --border-right: 6px;
+    --border-bottom: 4px;
+    --border-left: 3px;
+  }
 
-.stat-item:nth-child(4) .stat-box span {
-  transform: rotate(14deg) translate(0px, -px);
-  display: inline-block;
-  font-weight: 900;
-}
+  .saving-throw-item:nth-child(2) {
+    --box-rotation: 0deg;
+    --content-rotation: -7deg;
+    --translate-x: 1px;
+    --translate-y: -1px;
+    --font-weight: normal;
+    --border-top: 3px;
+    --border-right: 6px;
+    --border-bottom: 6px;
+    --border-left: 4px;
+  }
 
-.stat-item:nth-child(5) .stat-box span {
-  transform: rotate(-9deg) translate(-1px, 0px);
-  display: inline-block;
-  font-weight: 200;
-}
+  .saving-throw-item:nth-child(3) {
+    --box-rotation: 0deg;
+    --content-rotation: 12deg;
+    --translate-x: 0px;
+    --translate-y: 1px;
+    --font-weight: bold;
+    --border-top: 3px;
+    --border-right: 6px;
+    --border-bottom: 7px;
+    --border-left: 4px;
+  }
 
-.stat-item:nth-child(5) .stat-box span::before {
-  content: "15"; /* The "erased" number */
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: rgba(60, 60, 60, 0.2); /* Very faded */
-  transform: rotate(-6deg) translate(3px, 1px); /* Slightly different position/rotation */
-  z-index: -1;
-  font-weight: 100;
-}
+  .saving-throw-item:nth-child(4) {
+    --box-rotation: 270deg;
+    --content-rotation: -5deg;
+    --translate-x: -1px;
+    --translate-y: 1px;
+    --font-weight: bold;
+    --border-top: 4px;
+    --border-right: 3px;
+    --border-bottom: 6px;
+    --border-left: 8px;
+  }
 
-.stat-item:nth-child(6) .stat-box span {
-  transform: rotate(13deg) translate(2px, -3px);
-  display: inline-block;
-  font-weight: 900;
-}
+  .saving-throw-item:nth-child(5) {
+    --box-rotation: 90deg;
+    --content-rotation: 8deg;
+    --translate-x: 1px;
+    --translate-y: 0px;
+    --font-weight: bold;
+    --border-top: 6px;
+    --border-right: 6px;
+    --border-bottom: 3px;
+    --border-left: 4px;
+  }
 
-.stat-item:nth-child(7) .stat-box span {
-  transform: rotate(-7deg) translate(0px, 1px);
-  display: inline-block;
-}
+  .saving-throw-item:nth-child(6) {
+    --box-rotation: 0deg;
+    --content-rotation: -11deg;
+    --translate-x: 0px;
+    --translate-y: -1px;
+    --font-weight: normal;
+    --border-top: 3px;
+    --border-right: 6px;
+    --border-bottom: 8px;
+    --border-left: 3px;
+  }
+
+  .saving-throw-item:nth-child(7) {
+    --box-rotation: 270deg;
+    --content-rotation: 6deg;
+    --translate-x: -1px;
+    --translate-y: 1px;
+    --font-weight: normal;
+    --border-top: 4px;
+    --border-right: 3px;
+    --border-bottom: 6px;
+    --border-left: 7px;
+  }
+
+  /* Apply the rotations and translations using variables */
+  .saving-throw-item .saving-throw-box {
+    transform: rotate(var(--box-rotation, 0deg));
+    border-top-width: var(--border-top);
+    border-right-width: var(--border-right);
+    border-bottom-width: var(--border-bottom);
+    border-left-width: var(--border-left);
+  }
+
+  .saving-throw-item .saving-throw-box span {
+    transform: rotate(calc(var(--content-rotation, 0deg) - var(--box-rotation, 0deg))) translate(var(--translate-x, 0px), var(--translate-y, 0px));
+    display: inline-block;
+    font-weight: var(--font-weight);
+  }
+
+  .saving-throw-item:nth-child(4) .saving-throw-box span::before {
+    content: "-2";
+    /* The "erased" number */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(60, 60, 60, 0.2);
+    /* Very faded */
+    transform: rotate(-9deg) translate(-1px, 1px);
+    /* Slightly different position/rotation */
+    z-index: -1;
+    font-weight: 100;
+  }
+
+  .saving-throw-item:nth-child(5) .saving-throw-box span::before {
+    content: "0";
+    /* The "erased" number */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(60, 60, 60, 0.2);
+    /* Very faded */
+    transform: rotate(-9deg) translate(1px, 1px);
+    /* Slightly different position/rotation */
+    z-index: -1;
+    font-weight: 700;
+  }
+
+  .saving-throw-item:nth-child(3) .saving-throw-box span::before {
+    content: "-1";
+    /* The "erased" number */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(60, 60, 60, 0.2);
+    /* Very faded */
+    transform: rotate(9deg) translate(2px, -1px);
+    /* Slightly different position/rotation */
+    z-index: -1;
+    font-weight: 200;
+  }
 }

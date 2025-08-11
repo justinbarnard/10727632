@@ -1,7 +1,7 @@
 /* =============================================================================
    CSS LAYERS & IMPORTS
    ============================================================================= */
-@layer doodle, main, transforms; 
+@layer doodle, main, transforms;
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
@@ -12,27 +12,30 @@
 
 @layer main {
 
-/* =============================================================================
+  /* =============================================================================
    CSS CUSTOM PROPERTIES (VARIABLES)
    ============================================================================= */
-:root {
-  --primary-black: #0C0908;
-  --stat-box: 26px;
-}
-
-/* =============================================================================
-   BASE STYLES
-   ============================================================================= */
-body {
-    background-color: white;
-  background-image: radial-gradient(#888 0.5px, transparent 0.5px); /* Bullet journal dots */
-  background-size: 22px 22px; /* space between dots */
-    margin: 20px;
-    font-size: 16pt;
-    font-family: 'Short Stack', cursive; /* Handwritten style font */
+  :root {
+    --primary-black: #0C0908;
+    --stat-box: 26px;
   }
 
-/* =============================================================================
+  /* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+  body {
+    background-color: white;
+    background-image: radial-gradient(#888 0.5px, transparent 0.5px);
+    /* Bullet journal dots */
+    background-size: 22px 22px;
+    /* space between dots */
+    margin: 20px;
+    font-size: 16pt;
+    font-family: 'Short Stack', cursive;
+    /* Handwritten style font */
+  }
+
+  /* =============================================================================
    HEADER SECTION
    ============================================================================= */
 
@@ -40,18 +43,20 @@ body {
   #header-row {
     display: flex;
     align-items: center;
-    gap: .5rem; /* spacing between name and ICQ button */
+    gap: .5rem;
+    /* spacing between name and ICQ button */
     margin-bottom: -2rem;
   }
 
   /* Main name/title styling */
   #header-text {
-    font-family: 'Permanent Marker', cursive; /* Hand-drawn marker style */
+    font-family: 'Permanent Marker', cursive;
+    /* Hand-drawn marker style */
     font-weight: 300;
     color: var(--primary-black)
   }
 
-/* =============================================================================
+  /* =============================================================================
    ICQ STATUS WIDGET
    ============================================================================= */
 
@@ -62,22 +67,27 @@ body {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    
+
     /* Layout */
     align-items: center;
     gap: 5px;
     width: fit-content;
     padding: 4px 8px;
-    
+
     /* Classic Windows button styling */
-    background-color: #c0c0c0; /* classic gray */
-    border: 2px solid #fff; /* light outer border */
-    border-right-color: #808080; /* dark on right */
-    border-bottom-color: #808080; /* dark on bottom */
+    background-color: #c0c0c0;
+    /* classic gray */
+    border: 2px solid #fff;
+    /* light outer border */
+    border-right-color: #808080;
+    /* dark on right */
+    border-bottom-color: #808080;
+    /* dark on bottom */
     border-left-color: #fff;
     border-top-color: #fff;
     border-radius: 3px;
-    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff; /* 3D effect */
+    box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+    /* 3D effect */
   }
 
   /* Hover state - subtle highlight */
@@ -111,7 +121,8 @@ body {
 
   /* ICQ-specific retro font styling */
   .icq-status {
-    font-family: "Bitcount Prop Single", system-ui; /* Retro computer font */
+    font-family: "Bitcount Prop Single", system-ui;
+    /* Retro computer font */
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -128,7 +139,7 @@ body {
     margin-top: -3px;
   }
 
-/* =============================================================================
+  /* =============================================================================
    SOCIAL LINKS BAR
    ============================================================================= */
 
@@ -138,32 +149,43 @@ body {
     align-items: center;
     gap: 8px;
     margin-left: 1rem;
-    margin-bottom:0rem;
-    font-family: monospace; /* Clean technical font for links */
+    margin-bottom: 0rem;
+    font-family: monospace;
+    /* Clean technical font for links */
     font-size: 14px;
   }
-  
+
   /* Social media icons */
   #social-bar img {
     width: 20px;
     height: 20px;
     vertical-align: middle;
   }
-  
+
   /* Pipe separators between links */
   #social-bar .pipe {
     color: #666;
-    user-select: none; /* Prevent text selection */
+    user-select: none;
+    /* Prevent text selection */
   }
 
-/* =============================================================================
+  /* =============================================================================
    Overrides
    ============================================================================= */
 
   /* Horizontal rule divider */
-  hr {
+  hr.top-fold {
     border-bottom-width: 4px;
     margin-top: 3px;
+  }
+
+  p.section-header-title {
+    margin-bottom: 4px;
+    font-size: 16pt;
+    font-weight: 600;
+  }
+  hr.section-header-divider {
+    border-bottom-width: 2px;
   }
 
   /* Base card styling for character sheet sections */
@@ -176,66 +198,143 @@ body {
   /* Thin border variant for cards */
   .borders-thin {
     border-top-width: 4px;
-    border-bottom-width: 4px;
-    border-left-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 9px;
+    border-right-width: 10px;
+  }
+
+  /* Add to your main.css in the Overrides section */
+
+  /* Expanded character card */
+  .character-card {
+    width: 450px;
+    /* Increased from 300px */
+    height: 400px;
+    /* Slightly taller */
+  }
+
+  /* Two-column layout for stats */
+  .stats-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .core-stats,
+  .saving-throws {
+    flex: 0 1 auto
+  }
+
+  .core-stats h4,
+  .saving-throws h4 {
+    margin: 0 0 8px 0;
+    font-size: 11pt;
+  }
+
+  /* Saving throw styling - similar to stat boxes but distinct */
+  .saving-throw-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .saving-throw-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    gap: 8px;
+  }
+
+  .saving-throw-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-shrink: 0;
+
+    min-width: 28px;
+    /* Slightly smaller than stat boxes */
+    min-height: 28px;
+
+    /* Custom border widths for saving throws */
+    border-top-width: 5px;
+    border-left-width: 4px;
+    border-bottom-width: 5px;
     border-right-width: 6px;
   }
 
-}
+  .saving-throw-name {
+    font-family: 'Short Stack', cursive;
+    font-size: 13px;
+    /* Slightly smaller text */
+  }
 
-/* =============================================================================
+
+
+  /* =============================================================================
    CHARACTER STATS (RPG-style attribute scores)
    ============================================================================= */
-.stat-title {
-  font-family: 'Gloria Hallelujah', cursive;
-  font-weight:600;
-  font-size:18pt;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-/* Remove default list styling and add spacing */
-.stat-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  .stat-title {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 600;
+    font-size: 18pt;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 
-/* Individual stat row layout */
-.stat-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px; /* Reduced from 8px for tighter vertical spacing */
-  gap: 8px; /* Reduced from 12px for closer box-to-text spacing */
-}
+  /* Remove default list styling and add spacing */
+  .stat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-/* Minimal styling - let DoodleCSS handle the borders and sizing */
-.stat-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight:100;
-  font-size: 16px;
-  font-family: "Permanent Marker", cursive;
-  background-color: white;
-  flex-shrink: 0; /* Prevent box from shrinking */
-  margin-left: 5px;
-  
+  /* Individual stat row layout */
+  .stat-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    /* Reduced from 8px for tighter vertical spacing */
+    gap: 8px;
+    /* Reduced from 12px for closer box-to-text spacing */
+  }
+
+  /* Minimal styling - let DoodleCSS handle the borders and sizing */
+  .stat-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-shrink: 0;
+    /* Prevent box from shrinking */
+    margin-left: 5px;
+
+    /* Custom border widths - override DoodleCSS defaults for asymmetrical hand-drawn look */
+    border-top-width: 6px;
+    border-left-width: 5px;
+    border-bottom-width: 6px;
+    border-right-width: 8px;
+  }
+
+  /* Stat name styling */
+  .stat-name, .saving-throw-name{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 14pt;
+    font-weight: 400;
+  }
+
+  .saving-throw-item, .stat-item {
+    font-weight: 100;
+    font-size: 16px;
+    font-family: "Short Stack", cursive;
+
+  }
+
+  .saving-throw-box, .stat-box {
   /* Ensure consistent width while letting DoodleCSS control borders */
-  min-width: var(--stat-box);
-  min-height: var(--stat-box);
-  max-width: var(--stat-box);
-  max-height: var(--stat-box);
-  
-  /* Custom border widths - override DoodleCSS defaults for asymmetrical hand-drawn look */
-  border-top-width: 6px;
-  border-left-width: 5px;
-  border-bottom-width: 6px;
-  border-right-width: 8px;
-}
-
-/* Stat name styling */
-.stat-name {
-  font-family: 'Gloria Hallelujah', cursive; /* Match your handwritten theme */
-  font-size: 14pt;
-  font-weight: 400;
+    min-width: var(--stat-box);
+    min-height: var(--stat-box);
+    max-width: var(--stat-box);
+    max-height: var(--stat-box);
+  }
 }

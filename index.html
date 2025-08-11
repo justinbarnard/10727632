@@ -42,41 +42,82 @@
   </div>
 </header>
 <section class="doodle" id="_main">
-  <hr>
-<!-- Clean HTML - DoodleCSS will handle stat-box styling -->
-<div class="card borders-thin doodle">
-  <p class="stat-title">*Character Stats*</p>
+  <hr class="top-fold">
+<!-- Expanded character card with saving throws -->
+<div class="card borders-thin doodle character-card">
+  <p class="section-header-title">Character Stats ✦✦✦✦✦✦✦✦✦✦✦✦</p>
+  <hr class="section-header-divider">
+  <div class="stats-container">
+    <!-- Left column - Core Stats -->
+    <div class="core-stats">
+      <h4>Core Stats:</h4>
+      <ul class="stat-list">
+        <li class="stat-item">
+          <div class="stat-box"><span>10</span></div>
+          <span class="stat-name">Grit</span>
+        </li>
+        <li class="stat-item">
+          <div class="stat-box"><span>12</span></div>
+          <span class="stat-name">Adaptability</span>
+        </li>
+        <li class="stat-item">
+          <div class="stat-box"><span>16</span></div>
+          <span class="stat-name">Communication</span>
+        </li>
+        <li class="stat-item">
+          <div class="stat-box"><span>10</span></div>
+          <span class="stat-name">Impulsiveness</span>
+        </li>
+        <li class="stat-item">
+          <div class="stat-box"><span>13</span></div>
+          <span class="stat-name">Stubbornness</span>
+        </li>
+        <li class="stat-item">
+          <div class="stat-box"><span>11</span></div>
+          <span class="stat-name">Anxiety</span>
+        </li>
+        <li class="stat-item">
+          <div class="stat-box"><span>13</span></div>
+          <span class="stat-name">Introversion</span>
+        </li>
+      </ul>
+    </div>
 
-<ul class="stat-list">
-  <li class="stat-item">
-    <div class="stat-box"><span>10</span></div>
-    <span class="stat-name">Grit</span>
-  </li>
-  <li class="stat-item">
-    <div class="stat-box"><span>12</span></div>
-    <span class="stat-name">Adaptability</span>
-  </li>
-  <li class="stat-item">
-    <div class="stat-box"><span>16</span></div>
-    <span class="stat-name">Communication</span>
-  </li>
-  <li class="stat-item">
-    <div class="stat-box"><span>10</span></div>
-    <span class="stat-name">Impulsiveness</span>
-  </li>
-  <li class="stat-item">
-    <div class="stat-box"><span>13</span></div>
-    <span class="stat-name">Stubbornness</span>
-  </li>
-  <li class="stat-item">
-    <div class="stat-box"><span>11</span></div>
-    <span class="stat-name">Anxiety</span>
-  </li>
-  <li class="stat-item">
-    <div class="stat-box"><span>13</span></div>
-    <span class="stat-name">Introversion</span>
-  </li>
-</ul>
+    <!-- Right column - Saving Throws -->
+    <div class="saving-throws">
+      <h4>Saving Throws:</h4>
+      <ul class="saving-throw-list">
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>+3</span></div>
+          <span class="saving-throw-name">vs Family Schedule</span>
+        </li>
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>+2</span></div>
+          <span class="saving-throw-name">vs Scope Creep</span>
+        </li>
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>+2</span></div>
+          <span class="saving-throw-name">vs Public Speaking</span>
+        </li>
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>+1</span></div>
+          <span class="saving-throw-name">vs Sleeping Child</span>
+        </li>
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>-1</span></div>
+          <span class="saving-throw-name">vs Pointless Meeting</span>
+        </li>
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>-1</span></div>
+          <span class="saving-throw-name">vs Tech Debt</span>
+        </li>
+        <li class="saving-throw-item">
+          <div class="saving-throw-box"><span>-4</span></div>
+          <span class="saving-throw-name">vs Steam Sale</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 </section>
 <footer>
