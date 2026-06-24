@@ -10,39 +10,372 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <link href="main.css" rel="stylesheet">
+<style>
+  :root {
+    --parchment:      rgb(255, 252, 243);
+    --parchment-box:  #FEFBF2;
+    --maroon-deep:    #4A0C14;
+    --maroon-mid:     #7B1728;
+    --maroon-light:   #A83245;
+    --maroon-pale:    #D9A0AC;
+  }
+
+  body {
+    background-color: var(--parchment);
+    background-image: radial-gradient(rgba(123, 23, 40, 0.4) 0.5px, transparent 0.5px);
+    color: var(--maroon-deep);
+    margin: calc(2vh + 15px) calc(2vw + 15px);
+  }
+
+  #header-text {
+    color: var(--maroon-deep);
+  }
+
+  header {
+    position: absolute;
+    top: calc(2vh + 10px);
+    right: calc(2vw + 10px);
+  }
+
+  #header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  #social-bar {
+    margin-left: 0;
+  }
+
+  .doodle {
+    color: var(--maroon-deep);
+  }
+
+  .stat-box,
+  .saving-throw-box {
+    background-color: var(--parchment-box) !important;
+    color: var(--maroon-deep);
+  }
+
+  .page-layout {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+
+  .col {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .col-identity {
+    justify-content: flex-start;
+  }
+
+  .col-portrait {
+    justify-content: center;
+  }
+
+  .col-stats {
+    justify-content: flex-end;
+  }
+
+  .section-identity {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .abilities-frame {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .brace-svg {
+    width: 28px;
+    scale: calc(130%);
+    flex-shrink: 0;
+  }
+
+  .abilities-columns {
+    display: flex;
+    flex: 1;
+  }
+
+  .abilities-col {
+    flex: 1;
+    padding: 0 6px;
+  }
+
+  .abilities-col:first-child {
+    border-right: 1.5px solid var(--maroon-mid);
+    padding-left: 0;
+  }
+
+  .abilities-col:last-child {
+    padding-right: 0;
+  }
+
+  .abilities-col-header {
+    font-family: 'Short Stack', cursive;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--maroon-mid);
+    margin: 0 0 2px 0;
+    border-bottom: 1.5px solid var(--maroon-mid);
+    padding-bottom: 2px;
+  }
+
+  .abilities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .abilities-list li {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 8pt;
+    color: var(--maroon-deep);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-bottom: 1px solid var(--maroon-pale);
+    padding: 1px 0;
+    min-height: 22px;
+  }
+
+  .lvl-text span {
+    font-family: 'Permanent Marker', cursive !important;
+    font-size: 1.2em;
+    color: var(--maroon-deep);
+    letter-spacing: 0.08em;
+    display: inline-block;
+    transform: rotate(8deg);
+  }
+
+  .abilities-list li::before {
+    content: '○';
+    font-family: 'Permanent Marker', cursive;
+    font-size: 16pt;
+    color: var(--maroon-mid);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .abilities-list li.empty {
+    opacity: 0.35;
+  }
+
+  .ability-text {
+    display: inline-block;
+    transform-origin: left center;
+  }
+
+
+
+  .identity-block {
+    margin-bottom: 2px;
+  }
+
+  .identity-main {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 300;
+    font-size: 30pt;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--maroon-deep);
+  }
+
+  .identity-label {
+    font-family: 'Short Stack', cursive;
+    font-size: 15pt;
+    font-weight: 600;
+    letter-spacing: 0.09rem;
+    margin: 0;
+    opacity: 75%;
+    color: var(--maroon-mid);
+  }
+
+  .lra-image {
+    max-height: 75vh;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    border: none !important;
+    border-image: none !important;
+    filter: url(#duotone-maroon-parchment);
+  }
+  .indent {
+    padding-left: 2rem;
+  }
+
+</style>
 </head>
 <body>
-<header>
-  <div id="header-row">
-    <h1 id="header-text">Justin Barnard</h1>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="duotone-maroon-parchment" color-interpolation-filters="sRGB">
+      <!-- 1. strip all color to true grayscale -->
+      <feColorMatrix type="saturate" values="0"/>
+      <!-- 2. boost contrast: pushes midtones darker, keeps blacks black and whites white -->
+      <feComponentTransfer>
+        <feFuncR type="gamma" exponent="1.8" amplitude="1.1" offset="-0.05"/>
+        <feFuncG type="gamma" exponent="1.8" amplitude="1.1" offset="-0.05"/>
+        <feFuncB type="gamma" exponent="1.8" amplitude="1.1" offset="-0.05"/>
+      </feComponentTransfer>
+      <!-- 3. remap: black → #4A0C14, white → rgb(255,252,243) to match --parchment exactly -->
+      <feColorMatrix type="matrix" values="
+        0.237 0.237 0.237 0 0.290
+        0.314 0.314 0.314 0 0.047
+        0.292 0.292 0.292 0 0.078
+        0     0     0     1 0"/>
+    </filter>
+  </defs>
+</svg>
+<svg id="page-border" viewBox="0 0 1000 1000" preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg"
+     style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1000;">
+  <g stroke="#4A0C14" stroke-linecap="square" fill="none" vector-effect="non-scaling-stroke">
 
-<!-- Replace your existing #icq div with this -->
-<a href="https://www.icq.com" target="_blank" rel="noopener" id="icq">
-  <div id="icq-icon">
-    <img src="svg/icq.svg" height="24px" width="24px">
-  </div>
-  <div id="icq-status" class="icq-status">
-    <p>Offline</p>
-    <p class="status-id">10727632</p>
-  </div>
-</a>
-  </div>
-  <div id="social-bar">
-    <a href="https://bsky.app/profile/10727632.bsky.social" target="_blank" rel="noopener">
-      <img src="svg/bluesky.svg" alt="Bluesky" height="18px" width="18px" />
+    <!--
+      Each side is designed independently. Inner lines run 0→1000 so adjacent sides
+      always cross at corners. dashoffset = lineLength - leadingGap positions each
+      single-segment line precisely without tiling.
+
+      TOP:    sparse left, cluster right.   Open center.
+      BOTTOM: heavy left dominant, tiny stub far right.
+      LEFT:   short upper cluster, mostly open below.
+      RIGHT:  small top stub, big bottom segment. Opposite of left.
+    -->
+
+    <!-- TOP: outer far-right stub / middle right-weighted / inner has big center gap -->
+    <line x1="28"  y1="6"  x2="972"  y2="6"  stroke-width="1.5" stroke-dasharray="200 744"   stroke-dashoffset="884"/>
+    <line x1="20"  y1="13" x2="980"  y2="13" stroke-width="2"   stroke-dasharray="400 560"   stroke-dashoffset="460"/>
+    <line x1="0"   y1="20" x2="1000" y2="20" stroke-width="2.5" stroke-dasharray="450 200 350"/>
+
+    <!-- BOTTOM: tiny far-right outer / long left-dominant middle / inner big solid then small stub -->
+    <line x1="28"  y1="994" x2="972"  y2="994" stroke-width="1.5" stroke-dasharray="180 764"  stroke-dashoffset="244"/>
+    <line x1="20"  y1="987" x2="980"  y2="987" stroke-width="2"   stroke-dasharray="680 280"  stroke-dashoffset="940"/>
+    <line x1="0"   y1="980" x2="1000" y2="980" stroke-width="2.5" stroke-dasharray="700 150 150"/>
+
+    <!-- LEFT: middle short and near the top / outer floats in the center / inner breaks near middle -->
+    <line x1="6"  y1="28"  x2="6"  y2="972"  stroke-width="1.5" stroke-dasharray="340 604"  stroke-dashoffset="564"/>
+    <line x1="13" y1="20"  x2="13" y2="980"  stroke-width="2"   stroke-dasharray="280 680"  stroke-dashoffset="880"/>
+    <line x1="20" y1="0"   x2="20" y2="1000" stroke-width="2.5" stroke-dasharray="600 120 280"/>
+
+    <!-- RIGHT: outer near top / middle bottom-heavy / inner short top stub then long bottom -->
+    <line x1="994" y1="28"  x2="994" y2="972"  stroke-width="1.5" stroke-dasharray="250 694" stroke-dashoffset="904"/>
+    <line x1="987" y1="20"  x2="987" y2="980"  stroke-width="2"   stroke-dasharray="300 660" stroke-dashoffset="360"/>
+    <line x1="980" y1="0"   x2="980" y2="1000" stroke-width="2.5" stroke-dasharray="150 230 620"/>
+
+  </g>
+</svg>
+<header>
+  <div id="header-right">
+    <a href="https://www.icq.com" target="_blank" rel="noopener" id="icq">
+      <div id="icq-icon">
+        <img src="svg/icq.svg" height="24px" width="24px">
+      </div>
+      <div id="icq-status" class="icq-status">
+        <p>Offline</p>
+        <p class="status-id">10727632</p>
+      </div>
     </a>
-    <span class="pipe">|</span>
-    <a href="https://github.com/justinbarnard" target="_blank" rel="noopener">
-      <img src="svg/github.svg" alt="GitHub" height="18px" width="18px">
-    </a>
-    <span class="pipe">|</span>
-    <a href="https://www.linkedin.com/in/justinabarnard" target="_blank" rel="noopener" >
-      <img src="svg/linkedin.svg" alt="LinkedIn"  height="18px" width="18px"/>
-    </a>
+    <div id="social-bar">
+      <a href="https://bsky.app/profile/10727632.bsky.social" target="_blank" rel="noopener">
+        <img src="svg/bluesky.svg" alt="Bluesky" height="18px" width="18px" />
+      </a>
+      <span class="pipe">|</span>
+      <a href="https://github.com/justinbarnard" target="_blank" rel="noopener">
+        <img src="svg/github.svg" alt="GitHub" height="18px" width="18px">
+      </a>
+      <span class="pipe">|</span>
+      <a href="https://www.linkedin.com/in/justinabarnard" target="_blank" rel="noopener">
+        <img src="svg/linkedin.svg" alt="LinkedIn" height="18px" width="18px"/>
+      </a>
+    </div>
   </div>
 </header>
 <section class="doodle" id="_main">
-  <hr class="top-fold">
+  <div class="page-layout">
+    <section class="col col-identity">
+      <section class="section-identity">
+        <div class="identity-block">
+          <p class="identity-main"><span style="font-size: 145%">Justin Barnard</span></p>
+          <p class="identity-label indent">Character Name ✦✦✦✦✦✦✦</p>
+        </div>
+        <div class="identity-block">
+          <p class="identity-main">Last Responsible Adult</p>
+          <p class="identity-label indent">Class &amp; Lvl ( <span class="lvl-text"><span id="char-level"></span></span> ) ✦✦✦✦✦✦✦✦✦</p>
+        </div>
+        <div class="identity-block">
+          <p class="identity-main">Human <span style="font-size: 70%">(Overclocked)</span> </p>
+          <p class="identity-label indent">Species ✦✦✦✦✦✦✦✦✦</p>
+        </div>
+        <div class="identity-block">
+          <p class="identity-main">Exhausted Neutral </p>
+          <p class="identity-label indent">Alignment ✦✦✦✦✦✦✦✦✦</p>
+        </div>
+        <hr class="top-fold" style="margin-right:100px;" width="110%">
+      </section>
+
+      <section class="section-abilities">
+        <div class="abilities-frame">
+          <svg class="brace-svg" viewBox="0 0 30 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20,3 C 11,2 8,11 8,22 C 8,34 8,40 8,42 C 9,46 23,50 23,50 C 23,50 9,54 8,58 C 8,60 8,66 8,78 C 8,89 11,98 20,97" stroke="#4A0C14" stroke-width="2.5" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <div class="abilities-columns">
+            <div class="abilities-col">
+              <p class="abilities-col-header">Passive</p>
+              <ul class="abilities-list">
+                <li><span class="ability-text">Background Debugger</span></li>
+                <li><span class="ability-text">Dad Radar</span></li>
+                <li><span class="ability-text">Early Adopter</span></li>
+                <li><span class="ability-text">Caffeine Dependency</span></li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+              </ul>
+            </div>
+            <div class="abilities-col">
+              <p class="abilities-col-header">Active</p>
+              <ul class="abilities-list">
+                <li><span class="ability-text">Hyperfocus</span></li>
+                <li><span class="ability-text">Rubber Duck Debug</span></li>
+                <li><span class="ability-text">One More Turn</span></li>
+                <li><span class="ability-text">Scope Control</span></li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+              </ul>
+            </div>
+          </div>
+          <svg class="brace-svg" viewBox="0 0 30 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10,3 C 19,2 22,11 22,22 C 22,34 22,40 22,42 C 21,46 7,50 7,50 C 7,50 21,54 22,58 C 22,60 22,66 22,78 C 22,89 19,98 10,97" stroke="#4A0C14" stroke-width="2.5" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+          </svg>
+        </div>
+      </section>
+    </section>
+
+    <section class="col col-portrait">
+      <section class="section-portrait">
+        <img src="lra.svg" class="lra-image" alt="">
+      </section>
+    </section>
+
+    <section class="col col-stats">
+      <section class="section-stats">
 <!-- Expanded character card with saving throws -->
 <div class="card borders-thin doodle character-card">
   <p class="section-header-title">Character Stats ✦✦✦✦✦✦✦✦✦✦✦✦</p>
@@ -119,5 +452,23 @@
     </div>
   </div>
 </div>
+      </section><!-- /.section-stats -->
+    </section><!-- /.col-stats -->
+  </div><!-- /.page-layout -->
 </section>
 <footer>
+</footer>
+<script>
+  document.querySelectorAll('.ability-text').forEach(el => {
+    const deg = (Math.random() * 3 - 1.5).toFixed(2);
+    el.style.transform = `rotate(${deg}deg)`;
+  });
+
+  const born = new Date(1983, 6, 27);
+  const now = new Date();
+  let age = now.getFullYear() - born.getFullYear();
+  if (now < new Date(now.getFullYear(), 6, 27)) age--;
+  document.getElementById('char-level').textContent = age;
+</script>
+</body>
+</html>
