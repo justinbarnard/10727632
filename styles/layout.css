@@ -1,0 +1,138 @@
+/* =============================================================================
+   BASE PAGE
+   ============================================================================= */
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--parchment);
+  background-image: radial-gradient(rgba(123, 23, 40, 0.4) 0.5px, transparent 0.5px);
+  color: var(--maroon-deep);
+  font-family: var(--font-ui);
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: calc(2vh + 15px) calc(2vw + 15px);
+  overflow: hidden;
+}
+
+/* =============================================================================
+   SOCIALS — centered below portrait
+   ============================================================================= */
+
+.section-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: -0.75rem;
+}
+
+/* =============================================================================
+   PAGE LAYOUT — three-column flex grid
+   ============================================================================= */
+
+.doodle {
+  color: var(--maroon-deep);
+}
+
+.page-layout {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.col {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.col-identity { justify-content: flex-start; order: 1; }
+.col-portrait { justify-content: center;     order: 2; gap: 0px; }
+.col-stats    { order: 3; }
+
+/* At full width, col-left is transparent to the flex layout */
+.col-left { display: contents; }
+
+/* =============================================================================
+   SECTION STRUCTURE
+   ============================================================================= */
+
+.section-identity {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* =============================================================================
+   RESPONSIVE — hide side borders and collapse horizontal padding below 1500px
+   ============================================================================= */
+
+@media (max-width: 1500px) {
+  .border-left,
+  .border-right {
+    display: none;
+  }
+
+  body {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .page-layout {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Left stack: identity + stats, scrollable within viewport height */
+  .col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    max-height: calc(96vh - 30px);
+  }
+
+  /* Constrain portrait so col-left has room for its content */
+  .col-portrait {
+    align-self: center;
+    flex-shrink: 1;
+    max-width: 38vw;
+  }
+
+  .lra-image {
+    max-width: 100%;
+    max-height: 75vh;
+  }
+}
+
+/* =============================================================================
+   SCROLLBAR — subtle styling for the left column stack
+   ============================================================================= */
+
+.col-left {
+  scrollbar-width: thin;
+  scrollbar-color: var(--maroon-pale) transparent;
+}
+
+.col-left::-webkit-scrollbar {
+  width: 3px;
+}
+
+.col-left::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.col-left::-webkit-scrollbar-thumb {
+  background: var(--maroon-pale);
+  border-radius: 2px;
+}

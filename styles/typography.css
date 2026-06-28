@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single&display=swap');
+
+/* =============================================================================
+   BASE TYPE ROLES
+   Define face, weight, color, and spacing — not size.
+   Apply these to new elements directly, or use as the reference model
+   for the specific element classes below.
+   ============================================================================= */
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--maroon-deep);
+  line-height: 1.1;
+}
+
+.t-label {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--maroon-mid);
+  letter-spacing: 0.09rem;
+  opacity: 0.75;
+}
+
+.t-ui {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  color: var(--maroon-mid);
+  letter-spacing: 0.08em;
+}
+
+.t-hand {
+  font-family: var(--font-handwritten);
+  font-weight: 600;
+  color: var(--maroon-deep);
+}
+
+/* =============================================================================
+   SPECIFIC TEXT ELEMENTS
+   Implement the type roles above with element-specific sizing.
+   Only size (and margin where needed) differs from the base role.
+   ============================================================================= */
+
+.identity-main {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--maroon-deep);
+  line-height: 1.1;
+  font-size: 30pt;
+  margin: 0;
+}
+
+.identity-label {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--maroon-mid);
+  letter-spacing: 0.09rem;
+  font-size: 15pt;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.handwritten-info {
+  font-family: var(--font-handwritten);
+  font-weight: 600;
+  color: var(--maroon-deep);
+  font-size: 12pt;
+}
+
+.lvl-text span {
+  font-family: var(--font-display);
+  color: var(--maroon-deep);
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  transform: rotate(8deg);
+}

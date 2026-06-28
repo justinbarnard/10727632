@@ -1,0 +1,18 @@
+:root {
+  /* Color palette */
+  --parchment:      rgb(255, 252, 243);
+  --parchment-box:  #FEFBF2;
+  --maroon-deep:    #4A0C14;
+  --maroon-mid:     #7B1728;
+  --maroon-light:   #A83245;
+  --maroon-pale:    #D9A0AC;
+
+  /* Font families */
+  --font-display:     'Permanent Marker', cursive;
+  --font-ui:          'Short Stack', cursive;
+  --font-handwritten: 'Gloria Hallelujah', cursive;
+  --font-retro:       'Bitcount Prop Single', system-ui;
+
+  /* Component sizing */
+  --stat-box: 26px;
+}
